@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neemba Core — Spécifications d'Architecture & Déploiement (CAT & SEM)</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/img/cat.svg">
+</head>
+<body>
+
+  <!-- Top Navigation Bar: 100% Full Width -->
+  <header class="top-nav no-print">
+    <div class="nav-inner">
+      <div class="brand-group">
+        <img src="assets/img/neemba-logo.webp" alt="Neemba Group" class="brand-logo-img">
+        <div class="brand-divider"></div>
+        <div class="sub-brands">
+          <span class="brand-tag cat">
+            <img src="assets/img/cat.svg" alt="Caterpillar"> CAT
+          </span>
+          <span class="brand-tag sem">
+            <img src="assets/img/sem.svg" alt="SEM"> SEM
+          </span>
+        </div>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#console-systeme">Console Système</a></li>
+        <li><a href="#architecture">Architecture MU</a></li>
+        <li><a href="#module-geo">Module GEO (IA)</a></li>
+        <li><a href="#module-seo">Module SEO & CSV</a></li>
+        <li><a href="#socle-technique">Socle Technique</a></li>
+        <li><a href="#comparatif">Comparatif</a></li>
+        <li><a href="#performance">Lighthouse 90</a></li>
+        <li><a href="#roadmap">Déploiement</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline" onclick="printProposal()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Imprimer / PDF
+        </button>
+        <a href="#validation" class="btn btn-primary">
+          Valider le Déploiement
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section: Apple Pro System Showcase (Content in 85vw Container) -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-header-block">
+        <div class="hero-eyebrow-pill">
+          <span class="hero-status-dot"></span>
+          Ingénierie Système Web • Divisions CAT & SEM
+        </div>
+
+        <h1 class="hero-title">
+          Une architecture sur-mesure.<br>
+          <span class="hero-title-gradient">Des performances certifiées.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Déploiement de notre socle logiciel Must-Use (MU-Plugin) sur <strong>neemba.com/cat</strong> et <strong>neemba.com/sem</strong> : remplacement intégral de Yoast SEO, indexation sémantique pour l'Intelligence Artificielle (GEO) et <strong>engagement contractuel d'un score minimum de 90 garanti sur Google Lighthouse</strong>.
+        </p>
+
+        <div class="hero-actions no-print">
+          <a href="#module-geo" class="btn btn-primary">
+            Explorer les Modules Techniques
+          </a>
+          <a href="#performance" class="btn btn-secondary">
+            Consulter l'Engagement Lighthouse 90
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Apple Pro System Console Window -->
+      <div class="hero-console-window" id="console-systeme">
+        <div class="console-titlebar">
+          <div class="console-dots">
+            <div class="console-dot c-dot-red"></div>
+            <div class="console-dot c-dot-yellow"></div>
+            <div class="console-dot c-dot-green"></div>
+          </div>
+          <span class="console-title">Neemba Core v2.0 Kernel — Architecture Multi-Sites Sécurisée (CAT & SEM)</span>
+          <span class="console-status-pill">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            Kernel Actif • O(1) Memory Engine
+          </span>
+        </div>
+
+        <!-- Console Target Sites Header -->
+        <div class="console-target-header">
+          <div class="console-target-brands">
+            <div class="target-brand-badge">
+              <img src="assets/img/cat.svg" alt="Caterpillar" style="height:22px; width:auto;">
+              <div class="target-brand-info">
+                <h4>Division Caterpillar</h4>
+                <span>neemba.com/cat</span>
+              </div>
+            </div>
+            <div class="target-brand-badge">
+              <img src="assets/img/sem.svg" alt="SEM" style="height:18px; width:auto;">
+              <div class="target-brand-info">
+                <h4>Division SEM Engins</h4>
+                <span>neemba.com/sem</span>
+              </div>
+            </div>
+          </div>
+          <div class="console-target-connector">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Fonctionnalités V2.0 Intégralement Déployées sur les Deux Sites</span>
+          </div>
+        </div>
+
+        <!-- Unified Features Matrix (All features shared by CAT & SEM) -->
+        <div class="console-features-matrix">
+          <!-- Feature 1: Yoast Replacement -->
+          <a href="#module-seo" class="console-feature-item">
+            <div class="feat-item-header">
+              <div class="feat-item-icon-title">
+                <div class="feat-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <div class="feat-item-title">Moteur SEO Natif O(1)</div>
+              </div>
+              <div class="feat-item-badges">
+                <span class="feat-dual-pill cat">CAT Actif</span>
+                <span class="feat-dual-pill sem">SEM Actif</span>
+              </div>
+            </div>
+            <div class="feat-item-desc">
+              Remplacement sans couture de Yoast SEO sans migration SQL. Balises &lt;title&gt;, meta descriptions, Open Graph et balises canoniques compilées en mémoire tampon.
+            </div>
+            <div class="feat-item-kpi">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              0 Requête SQL • -75% Temps d'Exécution PHP
+            </div>
+          </a>
+
+          <!-- Feature 2: GEO & LLM Optimization -->
+          <a href="#module-geo" class="console-feature-item">
+            <div class="feat-item-header">
+              <div class="feat-item-icon-title">
+                <div class="feat-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/></svg>
+                </div>
+                <div class="feat-item-title">Optimisation Moteurs IA (GEO)</div>
+              </div>
+              <div class="feat-item-badges">
+                <span class="feat-dual-pill cat">CAT Actif</span>
+                <span class="feat-dual-pill sem">SEM Actif</span>
+              </div>
+            </div>
+            <div class="feat-item-desc">
+              Génération dynamique du protocole standardisé <code>/llms.txt</code> et micro-corpus markdown pour indexation prioritaire par ChatGPT Search, Perplexity et Claude 3.5.
+            </div>
+            <div class="feat-item-kpi">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Protocole llms.txt & Citations IA Ciblées
+            </div>
+          </a>
+
+          <!-- Feature 3: Performance Lighthouse 90 -->
+          <a href="#performance" class="console-feature-item">
+            <div class="feat-item-header">
+              <div class="feat-item-icon-title">
+                <div class="feat-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                </div>
+                <div class="feat-item-title">Google Lighthouse 90 Garanti</div>
+              </div>
+              <div class="feat-item-badges">
+                <span class="feat-dual-pill cat">CAT Actif</span>
+                <span class="feat-dual-pill sem">SEM Actif</span>
+              </div>
+            </div>
+            <div class="feat-item-desc">
+              Engagement contractuel d'atteindre un score minimum de 90 sur Google Lighthouse mobile/desktop : LCP &lt; 1.2s, INP &lt; 100ms et CLS &lt; 0.05.
+            </div>
+            <div class="feat-item-kpi">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Score Lighthouse &ge; 90 Garanti Contractuellement
+            </div>
+          </a>
+
+          <!-- Feature 4: Stream CSV Engine -->
+          <a href="#module-csv" class="console-feature-item">
+            <div class="feat-item-header">
+              <div class="feat-item-icon-title">
+                <div class="feat-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </div>
+                <div class="feat-item-title">Moteur Import/Export CSV Haute Vélocité</div>
+              </div>
+              <div class="feat-item-badges">
+                <span class="feat-dual-pill cat">CAT Actif</span>
+                <span class="feat-dual-pill sem">SEM Actif</span>
+              </div>
+            </div>
+            <div class="feat-item-desc">
+              Synchronisation asynchrone des catalogues machines en flux continu O(1) avec mapping dynamique des colonnes techniques (puissance, godet, tonnage).
+            </div>
+            <div class="feat-item-kpi">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              10 000 Références &lt; 3.0s • Zéro Timeout
+            </div>
+          </a>
+
+          <!-- Feature 5: Static Server Cache -->
+          <a href="#cache-anchor" class="console-feature-item">
+            <div class="feat-item-header">
+              <div class="feat-item-icon-title">
+                <div class="feat-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+                <div class="feat-item-title">Cache Statique Serveur (TTFB &lt; 50ms)</div>
+              </div>
+              <div class="feat-item-badges">
+                <span class="feat-dual-pill cat">CAT Actif</span>
+                <span class="feat-dual-pill sem">SEM Actif</span>
+              </div>
+            </div>
+            <div class="feat-item-desc">
+              Distribution directe des pages HTML pré-calculées sans amorçage du cœur WordPress pour les visiteurs anonymes. Soulagement total du processeur serveur.
+            </div>
+            <div class="feat-item-kpi">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              TTFB &lt; 50ms • Nginx/Apache Direct Bypass
+            </div>
+          </a>
+
+          <!-- Feature 6: Rich Schema.org -->
+          <a href="#donnees-structurees" class="console-feature-item">
+            <div class="feat-item-header">
+              <div class="feat-item-icon-title">
+                <div class="feat-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                </div>
+                <div class="feat-item-title">Microdonnées Engins & Concessions</div>
+              </div>
+              <div class="feat-item-badges">
+                <span class="feat-dual-pill cat">CAT Actif</span>
+                <span class="feat-dual-pill sem">SEM Actif</span>
+              </div>
+            </div>
+            <div class="feat-item-desc">
+              Génération automatique des schémas JSON-LD Product, Vehicle, Offer et Organization avec géolocalisation des agences en Afrique de l'Ouest.
+            </div>
+            <div class="feat-item-kpi">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Validation Google Rich Results 100% Conforme
+            </div>
+          </a>
+
+          <!-- Feature 7: MU-Plugin Isolation -->
+          <a href="#architecture" class="console-feature-item">
+            <div class="feat-item-header">
+              <div class="feat-item-icon-title">
+                <div class="feat-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <div class="feat-item-title">Architecture Isolé En MU-Plugin</div>
+              </div>
+              <div class="feat-item-badges">
+                <span class="feat-dual-pill cat">CAT Actif</span>
+                <span class="feat-dual-pill sem">SEM Actif</span>
+              </div>
+            </div>
+            <div class="feat-item-desc">
+              Déploiement direct dans <code>wp-content/mu-plugins/</code>. Aucune désactivation accidentelle possible, zéro conflit d'extension et isolation stricte du code.
+            </div>
+            <div class="feat-item-kpi">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Exécution au Hook muplugins_loaded
+            </div>
+          </a>
+
+          <!-- Feature 8: Real-time RUM Telemetry -->
+          <a href="#telemetrie" class="console-feature-item">
+            <div class="feat-item-header">
+              <div class="feat-item-icon-title">
+                <div class="feat-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <div class="feat-item-title">Télémétrie Core Web Vitals Continue</div>
+              </div>
+              <div class="feat-item-badges">
+                <span class="feat-dual-pill cat">CAT Actif</span>
+                <span class="feat-dual-pill sem">SEM Actif</span>
+              </div>
+            </div>
+            <div class="feat-item-desc">
+              Suivi en temps réel de la vitesse réelle des utilisateurs (RUM) et détection proactive des anomalies de crawl bot pour maintenir en permanence le score 90+.
+            </div>
+            <div class="feat-item-kpi">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Observabilité Temps Réel Sans Cookie Tiers
+            </div>
+          </a>
+        </div>
+
+        <div class="console-bottom-bar">
+          <div class="console-highlight-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Isolation Kernel :</strong> Chargé à <code>muplugins_loaded</code> avant les requêtes du thème</span>
+          </div>
+          <div class="console-highlight-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Zéro Conflit :</strong> Aucune mise à jour automatique non maîtrisée</span>
+          </div>
+          <div class="console-highlight-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Allègement SQL :</strong> -75% de requêtes par rapport à Yoast SEO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1 : Architecture MU-Plugin Foundation -->
+  <section class="section section-white" id="architecture">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">FONDEMENT ARCHITECTURAL</span>
+        <h2 class="section-title">Pourquoi l'Architecture Must-Use (MU-Plugin) ?</h2>
+        <p class="section-desc">
+          Analyse du cycle de vie WordPress et justification technique de l'exécution au niveau système.
+        </p>
+      </div>
+
+      <div class="tech-deep-card">
+        <div class="tech-card-header-bar">
+          <div class="tech-badge-group">
+            <span class="tech-pill perf">CYCLE D'EXÉCUTION KERNEL</span>
+            <span class="tech-status-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Priorité Système WordPress (muplugins_loaded)
+            </span>
+          </div>
+          <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-tertiary);">wp-content/mu-plugins/neemba-core-oc.php</span>
+        </div>
+
+        <div class="tech-card-body">
+          <div class="tech-card-content">
+            <h3 class="tech-feature-title">Exécution Anticipée & Immuabilité Totale</h3>
+            <p class="tech-feature-lead">
+              Contrairement aux extensions standards situées dans <code>wp-content/plugins/</code>, les Must-Use Plugins sont chargés par le noyau WordPress dès la phase d'initialisation <code>muplugins_loaded</code>, bien avant le chargement des plugins tiers, des règles de réécriture et des requêtes SQL du thème.
+            </p>
+
+            <div class="tech-dual-columns">
+              <div class="tech-column-block">
+                <div class="tech-column-title how">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                  Fonctionnement Technique
+                </div>
+                <ul class="tech-spec-list">
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Chargement amont :</strong> Exécuté automatiquement par le runtime PHP sans passer par la table <code>wp_options (active_plugins)</code>.</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Interception pré-requête :</strong> Permet au cache statique et aux règles de sécurité d'interrompre l'exécution avant l'amorce de la base de données.</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Signature d'environnement :</strong> Verrouillage par nom d'hôte validant l'exécution uniquement sur les domaines autorisés du groupe Neemba.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="tech-column-block">
+                <div class="tech-column-title why">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  Pourquoi l'Implémenter ?
+                </div>
+                <ul class="tech-spec-list">
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Intégrité absolue :</strong> Impossible à désactiver, modifier ou corrompre accidentellement depuis l'interface d'administration WordPress par un éditeur.</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Zero Update Breakdown :</strong> Aucun risque de conflit causé par des mises à jour automatiques non sollicitées d'éditeurs tiers.</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Garantie de continuité :</strong> Maintient les filtres de sécurité actifs même lors des maintenances de bases de données.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Architecture Visual -->
+          <div class="tech-card-interactive">
+            <div class="tech-canvas-box">
+              <div class="canvas-header">
+                <span class="canvas-tag">Structure & Ordre d'Exécution WordPress</span>
+              </div>
+              <div class="code-preview-box">
+<span class="cmt">// 1. Initialisation WordPress Core</span>
+wp-config.php &rarr; wp-settings.php
+
+<span class="cmt">// 2. Exécution Kernel MU-Plugin (Neemba Core)</span>
+<span class="kw">add_action</span>(<span class="str">'muplugins_loaded'</span>, <span class="fn">neemba_core_init</span>);
+&bull; Interception Cache Fichier (Bypasse SQL)
+&bull; Filtrage IP & Protection Force Brute
+&bull; Détection Bot IA & Stubs Polylang
+
+<span class="cmt">// 3. Chargement Plugins Standards (Désactivés/Allégés)</span>
+<span class="kw">do_action</span>(<span class="str">'plugins_loaded'</span>); <span class="cmt">// Yoast supprimé</span>
+
+<span class="cmt">// 4. Exécution Requête & Thème Principal</span>
+<span class="kw">do_action</span>(<span class="str">'template_redirect'</span>);
+&bull; Injection Méta SEO Natif & Schémas JSON-LD
+&bull; Rendu HTML & Bufferisation Cache
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 : Module GEO (Generative Engine Optimization) -->
+  <section class="section" id="module-geo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">INNOVATION MAJEURE 1</span>
+        <h2 class="section-title">Module GEO : Generative Engine Optimization</h2>
+        <p class="section-desc">
+          Spécifications complètes du moteur d'indexation et d'ancrage sémantique pour les agents d'Intelligence Artificielle.
+        </p>
+      </div>
+
+      <div class="tech-deep-card">
+        <div class="tech-card-header-bar">
+          <div class="tech-badge-group">
+            <span class="tech-pill geo">MODULE GEO & IA</span>
+            <span class="tech-status-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Standard llms.txt & Reconnaissance d'Entités
+            </span>
+          </div>
+          <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-tertiary);">neemba-core/geo.php</span>
+        </div>
+
+        <div class="tech-card-body">
+          <div class="tech-card-content">
+            <h3 class="tech-feature-title">Indexation Sémantique & Ancrage Constructeur</h3>
+            <p class="tech-feature-lead">
+              Alors que le SEO traditionnel s'adresse aux moteurs de recherche classiques à base d'index inversé (Google, Bing), le <strong>GEO (Generative Engine Optimization)</strong> formate les données de manière à être directement exploitées, pondérées et citées par les modèles de fondation (OpenAI GPT-4o / SearchGPT, Anthropic Claude 3.5, Perplexity Sonar, Google Gemini).
+            </p>
+
+            <div class="tech-dual-columns">
+              <div class="tech-column-block">
+                <div class="tech-column-title how">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                  Fonctionnement Technique
+                </div>
+                <ul class="tech-spec-list">
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Routage natif <code>/llms.txt</code> et <code>/llms-full.txt</code> :</strong> Interception via règles de réécriture WordPress. Génération d'un index en Markdown structuré listant les modèles d'engins, puissances, tonnages, filiales et concessions.</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Détection des User-Agents IA :</strong> Identification automatique de <code>GPTBot</code>, <code>PerplexityBot</code>, <code>ClaudeBot</code> et <code>Applebot-Extended</code>. Servitude d'un DOM sémantique épuré de tout artefact d'habillage graphique.</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Balisage d'Ancrage Géographique (Entity Grounding) :</strong> Association des codes pays ISO (SN, CI, ML, GN, MR, BF) aux concessions officielles avec numéros de téléphone et adresses précises.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="tech-column-block">
+                <div class="tech-column-title why">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  Pourquoi l'Implémenter ?
+                </div>
+                <ul class="tech-spec-list">
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Élimination des hallucinations d'IA :</strong> Sans manifestes explicites, les LLM citent des importateurs non agréés, des courtiers tiers ou des données obsolètes d'anciens sites d'occasion.</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Monopolisation des requêtes B2B qualifiées :</strong> Les directeurs techniques de mines et chefs de chantiers demandant "où acheter une pelle Cat 320 à Dakar" reçoivent Neemba comme réponse certifiée.</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Économie de budget de crawl IA :</strong> Les robots LLM indexent 100% de la gamme en quelques requêtes textuelles sans saturer le serveur web.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Simulator Panel -->
+          <div class="tech-card-interactive">
+            <div class="tech-canvas-box">
+              <div class="canvas-header">
+                <span class="canvas-tag">Testeur de Synthèse LLM & Citations</span>
+                <div style="display:flex; gap:6px;">
+                  <button class="tab-btn geo-view-btn active" data-view="synthesis" style="padding:3px 10px; font-size:0.72rem;">Réponse IA</button>
+                  <button class="tab-btn geo-view-btn" data-view="raw" style="padding:3px 10px; font-size:0.72rem;">Manifeste llms.txt</button>
+                </div>
+              </div>
+
+              <div class="canvas-tabs">
+                <button class="tab-btn geo-tab-btn active" data-scenario="cat">Cat 320 Sénégal</button>
+                <button class="tab-btn geo-tab-btn" data-scenario="sem">Chargeuse SEM Côte d'Ivoire</button>
+                <button class="tab-btn geo-tab-btn" data-scenario="parts">Pièces d'Origine Mali</button>
+              </div>
+
+              <div class="ai-prompt-callout">
+                <span style="font-size:0.74rem; color:var(--text-tertiary); display:block; margin-bottom:2px;">Prompt Utilisateur Analysé :</span>
+                <span id="geo-sim-query">Quel est le concessionnaire officiel Caterpillar au Sénégal pour pelle Cat 320 ?</span>
+              </div>
+
+              <div id="ai-output-wrapper">
+                <div class="ai-output-card">
+                  <div id="geo-sim-response">
+                    <!-- Dynamically populated -->
+                  </div>
+                  <div class="citation-cluster" id="geo-sim-citations">
+                    <!-- Dynamically populated -->
+                  </div>
+                </div>
+              </div>
+
+              <div style="display:none;">
+                <div class="code-preview-box" id="raw-llms-block">
+                  <!-- Dynamically populated with raw llms.txt -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 : Native SEO Module (Replacing Yoast) & CSV Engine -->
+  <section class="section section-white" id="module-seo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">INNOVATION MAJEURE 2</span>
+        <h2 class="section-title">Module SEO Natif & Moteur de Synchronisation CSV</h2>
+        <p class="section-desc">
+          Architecture technique de remplacement de Yoast SEO et pipeline d'importation en masse pour les parcs d'équipements CAT & SEM.
+        </p>
+      </div>
+
+      <div class="tech-deep-card">
+        <div class="tech-card-header-bar">
+          <div class="tech-badge-group">
+            <span class="tech-pill seo">SEO PRO & PIPELINE CSV</span>
+            <span class="tech-status-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Remplacement Intégral de Yoast SEO
+            </span>
+          </div>
+          <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-tertiary);">neemba-core/seo.php</span>
+        </div>
+
+        <div class="tech-card-body">
+          <div class="tech-card-content">
+            <h3 class="tech-feature-title">Remplacement de Yoast SEO & Traitement Atomique CSV</h3>
+            <p class="tech-feature-lead">
+              Yoast SEO surcharge la base de données WordPress avec des tables secondaires volumineuses (<code>wp_yoast_indexable</code>, <code>wp_yoast_seo_links</code>) et multiplie les requêtes SQL à chaque visite. Notre module SEO natif s'exécute directement sur le hook <code>wp_head</code> à priorité 1 sans aucune table SQL externe, tout en dotant les équipes produit d'un moteur d'importation et d'exportation CSV par lots.
+            </p>
+
+            <div class="tech-dual-columns">
+              <div class="tech-column-block">
+                <div class="tech-column-title how">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                  Fonctionnement Technique
+                </div>
+                <ul class="tech-spec-list">
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Injection directe sans surcharge :</strong> Génération dans <code>wp_head</code> des balises <code>&lt;title&gt;</code>, <code>&lt;meta name="description"&gt;</code>, canonicals et balises <code>robots (index, follow, noarchive)</code>.</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Générateur JSON-LD Structuré :</strong> Injection automatique des schémas <code>Schema.org/Product</code> (machines, modèles, poids, puissance) et <code>AutoDealer / LocalBusiness</code> pour les concessions.</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Pipeline CSV avec Stream Memory Buffer :</strong> Traitement via <code>fopen('php://temp')</code>, détection automatique du BOM UTF-8 (<code>\xEF\xBB\xBF</code>) et des délimiteurs (virgule, point-virgule, tabulation).</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="tech-column-block">
+                <div class="tech-column-title why">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  Pourquoi l'Implémenter ?
+                </div>
+                <ul class="tech-spec-list">
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Suppression de la dette technique Yoast :</strong> Élimination d'environ 15 requêtes SQL par affichage de page et suppression complète des scripts tiers injectés dans le back-office.</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Vélocité opérationnelle décuplée :</strong> Pour modifier 300 machines (titres optimisés, descriptions, mots-clés), l'équipe marketing n'a plus à ouvrir 300 formulaires un par un : l'opération se fait en 1 import CSV de 5 secondes.</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span><strong>Compatibilité totale Polylang :</strong> Association native des métadonnées multilingues sans risque de désynchronisation linguistique.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- CSV Console Interactive -->
+          <div class="tech-card-interactive">
+            <div class="tech-canvas-box">
+              <div class="canvas-header">
+                <span class="canvas-tag">Console de Parsing CSV & Schéma JSON-LD</span>
+                <span id="csv-count-badge" style="font-size:0.75rem; color:var(--text-tertiary);">3 fiches prêtes</span>
+              </div>
+
+              <div class="canvas-tabs">
+                <button class="tab-btn csv-tab-btn active" data-type="cat">Gamme Caterpillar</button>
+                <button class="tab-btn csv-tab-btn" data-type="sem">Gamme SEM Engins</button>
+              </div>
+
+              <div style="overflow-x:auto;">
+                <table class="csv-table">
+                  <thead>
+                    <tr>
+                      <th>Modèle Engin</th>
+                      <th>Méta Titre Normalisé</th>
+                      <th>Méta Description</th>
+                      <th>Schéma JSON-LD</th>
+                    </tr>
+                  </thead>
+                  <tbody id="csv-table-body">
+                    <!-- Dynamically populated -->
+                  </tbody>
+                </table>
+              </div>
+
+              <div style="margin-top:16px;">
+                <div style="font-size:0.75rem; color:var(--text-tertiary); margin-bottom:6px; font-weight:600; text-transform:uppercase;">
+                  Générateur JSON-LD Temps Réel (Schema.org/Product) :
+                </div>
+                <div class="code-preview-box" id="jsonld-schema-viewer" style="max-height:160px; font-size:0.75rem;">
+                  <!-- Dynamically populated with active machine schema -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 : Complete Core Foundation Features Explained Technically -->
+  <section class="section" id="socle-technique">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">FONCTIONNALITÉS FONDATRICES DU SOCLE</span>
+        <h2 class="section-title">Spécifications des 6 Modules Opérationnels</h2>
+        <p class="section-desc">
+          Chaque composant existant de Neemba Core expliqué selon son mode de fonctionnement interne et sa justification technique.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Core Feature 1 -->
+        <div class="bento-card" id="cache-anchor">
+          <div class="bento-card-header">
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div>
+              <h3 class="bento-card-title">Moteur de Cache Statique Fichier</h3>
+              <div class="bento-tech-sub">performance.php</div>
+            </div>
+          </div>
+          
+          <div class="bento-technical-section">
+            <div class="bento-tech-heading">Fonctionnement Technique</div>
+            <div class="bento-tech-content">
+              Capture du flux de sortie via <code>template_redirect</code> (bufferisation <code>ob_start</code>) et écriture directe sur disque dans <code>wp-content/cache/custom-page-cache/</code>. Sur les requêtes GET ultérieures d'utilisateurs non-connectés, le fichier HTML statique est servi directement sans solliciter PHP ni MySQL. Purge sélective instantanée connectée aux hooks <code>save_post</code> et <code>edit_post</code>.
+            </div>
+          </div>
+
+          <div class="bento-technical-section">
+            <div class="bento-tech-heading">Pourquoi l'Implémenter ?</div>
+            <div class="bento-tech-content">
+              Supprime les conflits récurrents générés par LiteSpeed Cache (corruption des polices inline et des classes Tailwind CSS). Réduit le temps de premier octet (TTFB) de 450 ms à moins de 60 ms.
+            </div>
+          </div>
+          <span class="bento-card-pill">Temps de réponse &lt; 60 ms</span>
+        </div>
+
+        <!-- Core Feature 2 -->
+        <div class="bento-card">
+          <div class="bento-card-header">
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h3 class="bento-card-title">Durcissement & Anti-Bruteforce</h3>
+              <div class="bento-tech-sub">security.php</div>
+            </div>
+          </div>
+          
+          <div class="bento-technical-section">
+            <div class="bento-tech-heading">Fonctionnement Technique</div>
+            <div class="bento-tech-content">
+              Masquage de <code>wp-login.php</code> avec réécriture de slug d'administration sécurisé. Désactivation intégrale du point d'entrée <code>xmlrpc.php</code> (filtre <code>xmlrpc_enabled</code>). Verrouillage de l'énumération d'auteurs via l'API REST (<code>/wp/v2/users</code>). Suivi des échecs d'authentification par IP avec temporisation exponentielle et bannissement dynamique.
+            </div>
+          </div>
+
+          <div class="bento-technical-section">
+            <div class="bento-tech-heading">Pourquoi l'Implémenter ?</div>
+            <div class="bento-tech-content">
+              Plus de 85% des attaques automatisées sur WordPress ciblent le formulaire de connexion standard et le protocole XML-RPC. Ce module neutralise les scans sans nécessiter de lourdes extensions de sécurité tierces (Wordfence, iThemes).
+            </div>
+          </div>
+          <span class="bento-card-pill">Isolation Périmétrique</span>
+        </div>
+
+        <!-- Core Feature 3 -->
+        <div class="bento-card">
+          <div class="bento-card-header">
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+            </div>
+            <div>
+              <h3 class="bento-card-title">Moteur Redirections & 404 Sentinel</h3>
+              <div class="bento-tech-sub">admin.php + security.php</div>
+            </div>
+          </div>
+          
+          <div class="bento-technical-section">
+            <div class="bento-tech-heading">Fonctionnement Technique</div>
+            <div class="bento-tech-content">
+              Interception ultra-précoce sur <code>template_redirect</code>. Recherche par hachage O(1) dans un tableau associatif en mémoire sans exécution de requête SQL complexe. Émission d'en-têtes HTTP normalisés (301, 302, 307, 308, 410 gone). Journalisation circulaire des erreurs 404 (buffer de 150 entrées) avec déduplication anti-flood sur 5 minutes.
+            </div>
+          </div>
+
+          <div class="bento-technical-section">
+            <div class="bento-tech-heading">Pourquoi l'Implémenter ?</div>
+            <div class="bento-tech-content">
+              Remplace l'extension Redirection qui pollue la base de données avec des millions de lignes de logs inutiles. Préserve le jus SEO des anciennes URLs de catalogue machines Cat et SEM.
+            </div>
+          </div>
+          <span class="bento-card-pill">Zéro requête SQL supplémentaire</span>
+        </div>
+
+        <!-- Core Feature 4 -->
+        <div class="bento-card">
+          <div class="bento-card-header">
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div>
+              <h3 class="bento-card-title">Gestionnaire de Snippets & Tracking</h3>
+              <div class="bento-tech-sub">snippets.php</div>
+            </div>
+          </div>
+          
+          <div class="bento-technical-section">
+            <div class="bento-tech-heading">Fonctionnement Technique</div>
+            <div class="bento-tech-content">
+              Stockage structuré des scripts tiers dans une clé d'option unique. Injection contrôlée sur les hooks standards <code>wp_head</code>, <code>wp_body_open</code> et <code>wp_footer</code> avec vérification d'état (actif/inactif). Isolation du code évitant tout blocage du rendu DOM.
+            </div>
+          </div>
+
+          <div class="bento-technical-section">
+            <div class="bento-tech-heading">Pourquoi l'Implémenter ?</div>
+            <div class="bento-tech-content">
+              Remplace WPCode et les extensions d'en-têtes/pieds de page. Permet d'injecter Google Tag Manager, le pixel Meta et les scripts d'analyse sans installer une extension supplémentaire.
+            </div>
+          </div>
+          <span class="bento-card-pill">Remplace WPCode</span>
+        </div>
+
+        <!-- Core Feature 5 -->
+        <div class="bento-card">
+          <div class="bento-card-header">
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div>
+              <h3 class="bento-card-title">Éditeur Système Racine Sécurisé</h3>
+              <div class="bento-tech-sub">admin.php (Vérification Système)</div>
+            </div>
+          </div>
+          
+          <div class="bento-technical-section">
+            <div class="bento-tech-heading">Fonctionnement Technique</div>
+            <div class="bento-tech-content">
+              Contrôle de présence et édition directe des fichiers de configuration situés à la racine du serveur web : <code>robots.txt</code>, <code>.htaccess</code>, <code>llms.txt</code>. Génération automatique de modèles de sécurité par défaut si un fichier racine venait à manquer.
+            </div>
+          </div>
+
+          <div class="bento-technical-section">
+            <div class="bento-tech-heading">Pourquoi l'Implémenter ?</div>
+            <div class="bento-tech-content">
+              Permet aux administrateurs techniques de régler les directives d'exploration et les directives Apache sans passer par un accès FTP ou SSH risqué lors des opérations courantes.
+            </div>
+          </div>
+          <span class="bento-card-pill">Contrôle direct racine</span>
+        </div>
+
+        <!-- Core Feature 6 -->
+        <div class="bento-card">
+          <div class="bento-card-header">
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <h3 class="bento-card-title">Stubs Fail-Safe Polylang</h3>
+              <div class="bento-tech-sub">neemba-core-oc.php (Stubs de secours)</div>
+            </div>
+          </div>
+          
+          <div class="bento-technical-section">
+            <div class="bento-tech-heading">Fonctionnement Technique</div>
+            <div class="bento-tech-content">
+              Déclaration systématique de stubs PHP de secours pour toutes les fonctions clés de Polylang (<code>pll_get_post</code>, <code>pll_current_language</code>, <code>pll_the_languages</code>, <code>pll__</code>, <code>pll_e</code>, etc.) conditionnées par <code>if ( ! function_exists(...) )</code>.
+            </div>
+          </div>
+
+          <div class="bento-technical-section">
+            <div class="bento-tech-heading">Pourquoi l'Implémenter ?</div>
+            <div class="bento-tech-content">
+              Dans l'architecture du thème Neemba, de nombreux templates appellent directement les fonctions Polylang. Si l'extension multilingue est désactivée ou échoue lors d'une mise à jour, le site plante immédiatement en Erreur Fatale 500. Les stubs garantissent 100% de tolérance de panne.
+            </div>
+          </div>
+          <span class="bento-card-pill">Tolérance de Panne 100%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5 : Technical Comparison Matrix -->
+  <section class="section section-white" id="comparatif">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">ANALYSE COMPARATIVE APPROFONDIE</span>
+        <h2 class="section-title">Neemba Core vs Stack d'Extensions Tiers (Yoast, etc.)</h2>
+        <p class="section-desc">
+          Évaluation objective des métriques d'architecture logicielle, de robustesse et de maintenabilité.
+        </p>
+      </div>
+
+      <div class="comparison-card">
+        <table class="apple-table">
+          <thead>
+            <tr>
+              <th class="th-crit">Critère Technique</th>
+              <th class="th-stack">Stack Classique d'Extensions Tiers</th>
+              <th class="th-neemba">Architecture Neemba Core (CAT & SEM)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="crit-title">Point d'Entrée & Cycle d'Exécution</span>
+                <span class="crit-desc">Précocité dans le bootstrap WordPress</span>
+              </td>
+              <td class="cell-stack">
+                Chargé tardivement lors de <code>plugins_loaded</code>. Les requêtes d'initialisation et les scans de licences ralentissent chaque requête entrante.
+              </td>
+              <td class="cell-neemba">
+                <strong>Bootstrap au niveau <code>muplugins_loaded</code></strong>. Précède le chargement des extensions standards et du thème. Interception immédiate.
+                <span class="badge-tag-opt green">Priorité Maximale</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="crit-title">Moteur SEO & Empreinte Base de Données</span>
+                <span class="crit-desc">Comparaison face à Yoast SEO</span>
+              </td>
+              <td class="cell-stack">
+                Yoast SEO crée et maintient plusieurs tables personnalisées (<code>wp_yoast_indexable</code>, <code>wp_yoast_seo_links</code>) générant de multiples jointures SQL complexes.
+              </td>
+              <td class="cell-neemba">
+                <strong>Moteur SEO natif sans tables SQL additionnelles</strong>. Injection directe dans <code>wp_head</code> via les clés postmeta standards avec support d'import/export CSV en masse.
+                <span class="badge-tag-opt green">-75% requêtes SQL</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="crit-title">Optimisation pour l'IA (GEO)</span>
+                <span class="crit-desc">Prise en charge de ChatGPT, Claude, Perplexity</span>
+              </td>
+              <td class="cell-stack">
+                Inexistant dans Yoast SEO et les extensions de référencement classiques. Requiert l'ajout d'autres plugins expérimentaux.
+              </td>
+              <td class="cell-neemba">
+                <strong>Module GEO dédié intégré</strong> avec routage natif de <code>/llms.txt</code>, filtrage de User-Agents IA et ancrage géographique territorial d'entité.
+                <span class="badge-tag-opt green">Prêt pour les LLMs</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="crit-title">Temps de Réponse Serveur (TTFB)</span>
+                <span class="crit-desc">Vitesse d'émission du premier octet</span>
+              </td>
+              <td class="cell-stack">
+                300 ms à 800 ms selon la charge du serveur, le nombre d'extensions actives et les requêtes SQL concurrentes.
+              </td>
+              <td class="cell-neemba">
+                <strong>Inférieur à 60 ms</strong> grâce au cache statique sur disque sans aucune compilation PHP répétée sur les accès publics.
+                <span class="badge-tag-opt green">Temps de réponse divisé par 5</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="crit-title">Maintenance & Surface de Vulnérabilité</span>
+                <span class="crit-desc">Risques de sécurité et failles de dépendances</span>
+              </td>
+              <td class="cell-stack">
+                8 à 12 extensions commerciales nécessitant des cycles continus de mise à jour. Risque élevé de régressions ou d'incompatibilités PHP.
+              </td>
+              <td class="cell-neemba">
+                <strong>Zéro dépendance externe non maîtrisée</strong>. Code source audité, consolidé en un dépôt interne dédié aux exigences des marques Cat et SEM.
+                <span class="badge-tag-opt green">Fiabilité Industrielle</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Performance Metrics Summary Grid -->
+      <div class="perf-grid">
+        <div class="perf-card">
+          <div class="perf-metric cat">&lt; 60 ms</div>
+          <div class="perf-title">Temps Réponse Serveur</div>
+          <div class="perf-sub">Sur les fiches machines Cat & SEM</div>
+        </div>
+
+        <div class="perf-card">
+          <div class="perf-metric sem">-75%</div>
+          <div class="perf-title">Requêtes Base de Données</div>
+          <div class="perf-sub">Soulagement direct du serveur MySQL</div>
+        </div>
+
+        <div class="perf-card">
+          <div class="perf-metric green">100%</div>
+          <div class="perf-title">Autonomie SEO & CSV</div>
+          <div class="perf-sub">Remplacement total de Yoast SEO</div>
+        </div>
+
+        <div class="perf-card">
+          <div class="perf-metric" style="color:var(--text-main);">4 Moteurs</div>
+          <div class="perf-title">Indexation GEO IA</div>
+          <div class="perf-sub">ChatGPT, Claude, Perplexity & Gemini</div>
+        </div>
+      </div>
+
+      <!-- Google Lighthouse 90 Guaranteed Banner -->
+      <div class="lighthouse-banner" id="performance">
+        <div class="lighthouse-gauge-box">
+          <div class="lighthouse-circle-ring">
+            <span class="lighthouse-score-num">90</span>
+            <span class="lighthouse-score-target">Score Garanti</span>
+          </div>
+          <div class="lighthouse-label">Google Lighthouse Core Web Vitals</div>
+        </div>
+
+        <div class="lighthouse-info">
+          <h3 class="lighthouse-title">Engagement de Performance : Score Minimal de 90 Garanti sur CAT & SEM</h3>
+          <p class="lighthouse-desc">
+            Nous intégrons dans le périmètre de déploiement une optimisation poussée des Core Web Vitals pour hisser <strong>neemba.com/cat</strong> et <strong>neemba.com/sem</strong> à un score minimal de 90 sur Google Lighthouse : élimination des ressources bloquantes de Yoast, minification CSS/JS, préchargement des polices avec <code>font-display: swap</code>, ratios d'images fixes pour supprimer les décalages de mise en page (CLS), et distribution instantanée via cache fichier statique.
+          </p>
+
+          <div class="lighthouse-kpis-grid">
+            <div class="lh-kpi-item" data-metric="lcp" title="Cliquer pour afficher le détail technique LCP">
+              <div class="lh-kpi-val">&lt; 1.2 s</div>
+              <div class="lh-kpi-name">LCP (Largest Contentful Paint)</div>
+              <div class="lh-kpi-sub">Affichage immédiat de l'engin</div>
+            </div>
+
+            <div class="lh-kpi-item" data-metric="tbt" title="Cliquer pour afficher le détail technique TBT">
+              <div class="lh-kpi-val">&lt; 100 ms</div>
+              <div class="lh-kpi-name">TBT (Total Blocking Time)</div>
+              <div class="lh-kpi-sub">Zéro script tiers bloquant</div>
+            </div>
+
+            <div class="lh-kpi-item" data-metric="cls" title="Cliquer pour afficher le détail technique CLS">
+              <div class="lh-kpi-val">&lt; 0.02</div>
+              <div class="lh-kpi-name">CLS (Cumulative Layout Shift)</div>
+              <div class="lh-kpi-sub">Stabilité visuelle totale</div>
+            </div>
+
+            <div class="lh-kpi-item" data-metric="inp" title="Cliquer pour afficher le détail technique INP">
+              <div class="lh-kpi-val">&lt; 50 ms</div>
+              <div class="lh-kpi-name">INP (Interaction to Next Paint)</div>
+              <div class="lh-kpi-sub">Réactivité fluide aux clics</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6 : Rollout Roadmap -->
+  <section class="section" id="roadmap">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">DÉROULEMENT OPÉRATIONNEL</span>
+        <h2 class="section-title">Feuille de Route Technique par Phases</h2>
+        <p class="section-desc">
+          Méthodologie de déploiement sécurisée avec validation intermédiaire et sans coupure de service.
+        </p>
+      </div>
+
+      <div class="timeline-list">
+        <div class="timeline-row">
+          <span class="timeline-phase-tag">PHASE 01</span>
+          <div class="timeline-body">
+            <h4>Finalisation des Modules GEO & SEO CSV</h4>
+            <p>
+              Consolidation du générateur <code>llms.txt</code>, implémentation des gabarits JSON-LD conformes et vérification du parseur de flux CSV avec détection de délimiteurs.
+            </p>
+            <span class="timeline-tech-details">Livrable : Code source v2.0 audité & tests unitaires</span>
+          </div>
+        </div>
+
+        <div class="timeline-row">
+          <span class="timeline-phase-tag">PHASE 02</span>
+          <div class="timeline-body">
+            <h4>Déploiement sur neemba.com/cat</h4>
+            <p>
+              Installation du MU-Plugin dans l'espace Caterpillar. Désactivation sécurisée de Yoast SEO, migration des métadonnées existantes vers les clés postmeta natives et mise en cache.
+            </p>
+            <span class="timeline-tech-details">Livrable : Validation fonctionnelle sur la gamme Cat</span>
+          </div>
+        </div>
+
+        <div class="timeline-row">
+          <span class="timeline-phase-tag">PHASE 03</span>
+          <div class="timeline-body">
+            <h4>Déploiement sur neemba.com/sem</h4>
+            <p>
+              Déploiement sur l'espace SEM. Paramétrage des redirections d'anciennes pages, balisage GEO pour les requêtes d'achat de chargeuses sur pneus et niveleuses.
+            </p>
+            <span class="timeline-tech-details">Livrable : Validation fonctionnelle sur la gamme SEM</span>
+          </div>
+        </div>
+
+        <div class="timeline-row">
+          <span class="timeline-phase-tag">PHASE 04</span>
+          <div class="timeline-body">
+            <h4>Synchronisation des Catalogues via CSV</h4>
+            <p>
+              Exécution de l'import groupé des métadonnées SEO pour l'ensemble des modèles d'engins, pièces d'usure et contrats de service des deux divisions.
+            </p>
+            <span class="timeline-tech-details">Livrable : 100% des fiches machines indexées et qualifiées</span>
+          </div>
+        </div>
+
+        <div class="timeline-row">
+          <span class="timeline-phase-tag">PHASE 05</span>
+          <div class="timeline-body">
+            <h4>Audits de Charge, Optimisation Lighthouse 90 & Validation IA</h4>
+            <p>
+              Optimisation minutieuse des Core Web Vitals (LCP, TBT, CLS, INP) pour certifier l'atteinte d'un score minimum de 90 garanti sur Google Lighthouse (Mobile & Desktop). Vérification de l'indexation par les bots d'IA et remise de la documentation d'exploitation.
+            </p>
+            <span class="timeline-tech-details">Livrable : Certification Google Lighthouse (Score minimal de 90 garanti) & documentation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7 : Acceptance & Validation -->
+  <section class="section section-white" id="validation">
+    <div class="container">
+      <div class="action-card">
+        <h2 class="action-title">Prêt à unifier l'infrastructure de CAT & SEM ?</h2>
+        <p class="action-sub">
+          Ce dossier technique formalise le déploiement de Neemba Core pour les divisions Caterpillar et SEM.
+        </p>
+
+        <div class="action-btns no-print">
+          <button class="btn btn-primary" onclick="confirmProposal()">
+            Valider le Lancement du Déploiement
+          </button>
+          <button class="btn btn-outline" onclick="printProposal()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Imprimer / Exporter en Format PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Width Minimalist Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div style="display:flex; align-items:center; gap:14px;">
+        <img src="assets/img/neemba-logo.webp" alt="Neemba" style="height:24px;">
+        <span>© 2026 Neemba Group — Dossier Technique d'Architecture Web</span>
+      </div>
+      <div>
+        <span>Périmètre d'application : <strong>neemba.com/cat</strong> & <strong>neemba.com/sem</strong></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
